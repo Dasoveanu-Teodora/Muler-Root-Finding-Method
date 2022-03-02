@@ -1,0 +1,33 @@
+Muller's Method
+Most of the root-finding methods that we have considered so far have approximated the function in the neighborhood of the root by a straight line.
+Muller's method is based on approximating the function in the neighborhood of the root by a quadratic polynomial.
+A second-degree polynomial is made to fit three points near a root, at $ x_0,x_1,x_2$ with $ x_0$ between $ x_1$, and $ x_2$.
+The proper zero of this quadratic, using the quadratic formula, is used as the improved estimate of the root.
+A quadratic equation that fits through three points in the vicinity of a root, in the form  a*u^2 + b*u + c
+
+Transform axes to pass through the middle point, by letting $ u=x-x_0$. Let $ h_1=x_1-x_0$ and $ h_2=x_0-x_2$. We evaluate the coefficients by evaluating $ p_2(\nu)$ at the three points:
+
+$ u =0: a(0)^2 + b(0) + c=f_0$
+$ u =h_1:  ah_1^2 + bh_1 + c =f_1$
+$ u =-h_2:  ah_2^2 -bh_2 + c=f_2$
+
+From the first equation, $ c=f_0$. Letting $ h_2/h_1=\gamma$, we can solve the other two equations for a, and b
+
+Figure 3.7: Parabola $ a\nu ^2 + b\nu + c=p_2(\nu )$
+\includegraphics[scale=1]{figures/1.10.ps}
+Transform axes to pass through the middle point, by letting $ \nu=x-x_0$. Let $ h_1=x_1-x_0$ and $ h_2=x_0-x_2$. We evaluate the coefficients by evaluating $ p_2(\nu)$ at the three points:
+
+$ u =0: a(0)^2 + b(0) + c=f_0$
+$ u =h_1:  ah_1^2 + bh_1 + c =f_1$
+$ u =-h_2:  ah_2^2 -bh_2 + c=f_2$
+
+From the first equation, $ c=f_0$. Letting $ h_2/h_1=\gamma$, we can solve the other two equations for a, and b.
+$\displaystyle a=\frac{\gamma f_1-f_0(1+\gamma)+f_2}{\gamma h_1^2(1+\gamma)}, b=\frac{f_1-f_0-ah_1^2}{h_1}
+$
+After computing a, b, and c, we solve for the root of $ a\nu^2 + b\nu + c$ by the quadratic formula
+$\displaystyle \nu_{1,2}=\frac{2c}{-b\pm\sqrt{b^2-4ac}}, \nu=x-x_0, root=x_0-\frac{2c}{b\pm\sqrt{b^2-4ac}}
+$
+
+Bibliography
+http://boron.physics.metu.edu.tr/NumericalComputations/Fall2004/ceng375/node24.html
+https://mathworld.wolfram.com/MullersMethod.html
